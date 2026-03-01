@@ -10,7 +10,16 @@ class LoadingScreen extends StatefulHookConsumerWidget {
 
 class _LoadingScreenState extends ConsumerState<LoadingScreen> {
   @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return Container();
+    return const PopScope<void>(
+      canPop: false,
+      child: Scaffold(body: Center(child: CircularProgressIndicator())),
+    );
   }
 }
