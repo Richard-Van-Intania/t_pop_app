@@ -1,0 +1,5 @@
+   required String users_uuid,
+    required String email,
+    required String display_name,
+    required String created_at,
+    required String updated_at,

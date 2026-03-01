@@ -78,7 +78,3 @@ linter:
     use_named_constants: true
     valid_regexps: true
     void_checks: true
-
-
-formatter:
-  page_width: 240

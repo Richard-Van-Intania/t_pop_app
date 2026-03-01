@@ -11,8 +11,10 @@ class LoadingScreen extends StatefulHookConsumerWidget {
 class _LoadingScreenState extends ConsumerState<LoadingScreen> {
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) async {
+      // login
+    });
   }
 
   @override
