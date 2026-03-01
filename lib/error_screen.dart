@@ -11,6 +11,9 @@ class ErrorScreen extends StatefulHookConsumerWidget {
 class _ErrorScreenState extends ConsumerState<ErrorScreen> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return const PopScope<void>(
+      canPop: false,
+      child: Scaffold(body: Center(child: Text('error'))),
+    );
   }
 }

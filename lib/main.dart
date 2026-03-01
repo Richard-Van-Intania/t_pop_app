@@ -1,15 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'initializers.dart';
+import 'l10n/app_localizations.dart';
+import 'providers.dart';
 import 'routes.dart';
 
-void main() {
-  runApp(const MyApp());
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
+  await initialize();
+  runApp(const ProviderScope(child: MyApp()));
 }
 
 class MyApp extends HookConsumerWidget {
   const MyApp({super.key});
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return MaterialApp.router(title: 'T-POP', routerConfig: goRouter);
+    final Locale locale = ref.watch(updateLocaleProvider);
+    return MaterialApp.router(title: 'T-POP', localizationsDelegates: AppLocalizations.localizationsDelegates, supportedLocales: AppLocalizations.supportedLocales, locale: locale, routerConfig: goRouter);
   }
 }

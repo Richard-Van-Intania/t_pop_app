@@ -78,3 +78,7 @@ linter:
     use_named_constants: true
     valid_regexps: true
     void_checks: true
+
+
+plugins:
+  riverpod_lint: 3.1.3
