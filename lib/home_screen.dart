@@ -84,7 +84,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
               ),
               const SizedBox(height: 32),
               Card.filled(
-                color: Theme.of(context).colorScheme.surfaceContainer,
+                color: Theme.of(context).colorScheme.surfaceContainerLow,
                 child: Padding(
                   padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 8),
                   child: Column(
@@ -93,7 +93,37 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                       Row(
                         children: [
                           Text(' / month', style: Theme.of(context).textTheme.titleSmall!.copyWith(color: Theme.of(context).colorScheme.onSurfaceVariant)),
-                          Spacer(),
+                          const Spacer(),
+                          Text(' / month', style: Theme.of(context).textTheme.titleSmall!.copyWith(color: Theme.of(context).colorScheme.onSurfaceVariant)),
+                        ],
+                      ),
+                      const SizedBox(height: 8),
+                      const Divider(thickness: 1),
+                      const SizedBox(height: 8),
+                      Row(
+                        children: [
+                          Text(' / month', style: Theme.of(context).textTheme.titleSmall!.copyWith(color: Theme.of(context).colorScheme.onSurfaceVariant)),
+                          const Spacer(),
+                          Text(' / month', style: Theme.of(context).textTheme.titleSmall!.copyWith(color: Theme.of(context).colorScheme.onSurfaceVariant)),
+                        ],
+                      ),
+                      const SizedBox(height: 8),
+                      const Divider(thickness: 1),
+                      const SizedBox(height: 8),
+                      Row(
+                        children: [
+                          Text(' / month', style: Theme.of(context).textTheme.titleSmall!.copyWith(color: Theme.of(context).colorScheme.onSurfaceVariant)),
+                          const Spacer(),
+                          Text(' / month', style: Theme.of(context).textTheme.titleSmall!.copyWith(color: Theme.of(context).colorScheme.onSurfaceVariant)),
+                        ],
+                      ),
+                      const SizedBox(height: 8),
+                      const Divider(thickness: 1),
+                      const SizedBox(height: 8),
+                      Row(
+                        children: [
+                          Text(' / month', style: Theme.of(context).textTheme.titleSmall!.copyWith(color: Theme.of(context).colorScheme.onSurfaceVariant)),
+                          const Spacer(),
                           Text(' / month', style: Theme.of(context).textTheme.titleSmall!.copyWith(color: Theme.of(context).colorScheme.onSurfaceVariant)),
                         ],
                       ),
@@ -101,6 +131,18 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                   ),
                 ),
               ),
+              const Spacer(),
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(backgroundColor: Theme.of(context).colorScheme.primary),
+                onPressed: () {},
+                child: Container(
+                  alignment: Alignment.center,
+                  width: double.maxFinite,
+                  height: 56,
+                  child: Text(' / month', style: Theme.of(context).textTheme.titleSmall!.copyWith(color: Theme.of(context).colorScheme.onPrimary)),
+                ),
+              ),
+              const SizedBox(height: 16),
             ],
           ),
         ),
