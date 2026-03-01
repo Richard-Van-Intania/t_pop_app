@@ -5,10 +5,22 @@ void main() {
   runApp(const MyApp());
 }
 
-class MyApp extends HookConsumerWidget {
+class MyApp extends StatefulHookConsumerWidget {
   const MyApp({super.key});
+
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  ConsumerState<ConsumerStatefulWidget> createState() => _MyAppState();
+}
+
+class _MyAppState extends ConsumerState<MyApp> {
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
     return Container();
   }
 }
