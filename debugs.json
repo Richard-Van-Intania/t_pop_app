@@ -1,0 +1,14 @@
+{
+    "subscriptions_uuid": "019ca990-d2e0-7074-a3b4-be66fc4ca41c",
+    "users_uuid": "019ca81b-80de-715b-97c4-8a7ed1872dfb",
+    "packages_uuid": "019ca81e-8a0c-7af0-ba69-29d1ac990a11",
+    "subscription_created_at": "2026-03-01T13:22:46.623965Z",
+    "expired_at": "2026-03-31T13:22:46.623590Z",
+    "is_active": true,
+    "payment_method": "apple_store",
+    "title": "Basic",
+    "description": "Access to basic content with limited features",
+    "price": 490.0,
+    "duration_days": 30,
+    "benefits": "Access basic content, Standard quality streaming"
+}

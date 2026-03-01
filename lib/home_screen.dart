@@ -14,7 +14,97 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
   Widget build(BuildContext context) {
     return PopScope<void>(
       canPop: false,
-      child: Scaffold(body: Center(child: Text(AppLocalizations.of(context)!.home))),
+      child: Scaffold(
+        appBar: AppBar(
+          backgroundColor: Theme.of(context).colorScheme.surfaceContainer,
+          title: Text('Current subscription', style: Theme.of(context).textTheme.titleLarge!.copyWith(color: Theme.of(context).colorScheme.onSurfaceVariant)),
+          actions: <Widget>[
+            IconButton(
+              icon: Icon(Icons.history, color: Theme.of(context).colorScheme.onSurfaceVariant),
+              onPressed: () {
+                //
+              },
+            ),
+            const SizedBox(width: 16),
+          ],
+        ),
+        body: Padding(
+          padding: const EdgeInsets.all(16),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Container(
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  color: Theme.of(context).colorScheme.primaryContainer,
+                  borderRadius: const BorderRadius.only(topLeft: Radius.circular(16), topRight: Radius.circular(16)),
+                ),
+                child: Column(
+                  children: [
+                    const SizedBox(height: 32),
+                    Text('Basic', style: Theme.of(context).textTheme.displayMedium!.copyWith(color: Theme.of(context).colorScheme.onPrimaryContainer)),
+                    const SizedBox(height: 16),
+                    const Divider(thickness: 1, indent: 24, endIndent: 24),
+                    const SizedBox(height: 16),
+                    Text(
+                      'Access to basic content with limited',
+                      style: Theme.of(context).textTheme.bodyLarge!.copyWith(color: Theme.of(context).colorScheme.onPrimaryContainer),
+                      textAlign: TextAlign.center,
+                    ),
+                    const SizedBox(height: 16),
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text('THB 199', style: Theme.of(context).textTheme.titleLarge!.copyWith(color: Theme.of(context).colorScheme.onPrimaryContainer)),
+                        Text(' / month', style: Theme.of(context).textTheme.titleSmall!.copyWith(color: Theme.of(context).colorScheme.onPrimaryContainer)),
+                      ],
+                    ),
+                    const SizedBox(height: 16),
+                  ],
+                ),
+              ),
+              Container(
+                padding: const EdgeInsets.symmetric(vertical: 32, horizontal: 16),
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  color: Theme.of(context).colorScheme.surfaceContainerLow,
+                  borderRadius: const BorderRadius.only(bottomLeft: Radius.circular(16), bottomRight: Radius.circular(16)),
+                ),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Icon(Icons.check_circle, color: Colors.green),
+                    const SizedBox(width: 8),
+                    Expanded(
+                      child: Text('Access basic content, Standard quality streaming', style: Theme.of(context).textTheme.bodyLarge!.copyWith(color: Theme.of(context).colorScheme.onSurfaceVariant)),
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(height: 32),
+              Card.filled(
+                color: Theme.of(context).colorScheme.surfaceContainer,
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 8),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Row(
+                        children: [
+                          Text(' / month', style: Theme.of(context).textTheme.titleSmall!.copyWith(color: Theme.of(context).colorScheme.onSurfaceVariant)),
+                          Spacer(),
+                          Text(' / month', style: Theme.of(context).textTheme.titleSmall!.copyWith(color: Theme.of(context).colorScheme.onSurfaceVariant)),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }

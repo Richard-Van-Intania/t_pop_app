@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:iconify_flutter/iconify_flutter.dart';
-import 'package:iconify_flutter/icons/ri.dart';
 
 class ErrorScreen extends StatefulHookConsumerWidget {
   const ErrorScreen({super.key});
@@ -16,7 +14,7 @@ class _ErrorScreenState extends ConsumerState<ErrorScreen> {
     return PopScope<void>(
       canPop: false,
       child: Scaffold(
-        body: Center(child: Iconify(Ri.error_warning_line, color: Theme.of(context).colorScheme.error, size: 32)),
+        body: Center(child: Icon(Icons.error_outline, color: Theme.of(context).colorScheme.error, size: 32)),
       ),
     );
   }
