@@ -18,6 +18,13 @@ class MyApp extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final Locale locale = ref.watch(updateLocaleProvider);
-    return MaterialApp.router(title: 'T-POP', localizationsDelegates: AppLocalizations.localizationsDelegates, supportedLocales: AppLocalizations.supportedLocales, locale: locale, routerConfig: goRouter);
+    return MaterialApp.router(
+      title: 'T-POP',
+      theme: ThemeData(useMaterial3: true, colorScheme: ColorScheme.fromSeed(seedColor: Colors.pinkAccent)),
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      supportedLocales: AppLocalizations.supportedLocales,
+      locale: locale,
+      routerConfig: goRouter,
+    );
   }
 }
