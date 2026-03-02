@@ -79,3 +79,13 @@ Map<String, dynamic> _$PackagesToJson(_Packages instance) => <String, dynamic>{
   'is_active': instance.is_active,
   'benefits': instance.benefits,
 };
+
+_BuySubscription _$BuySubscriptionFromJson(Map<String, dynamic> json) =>
+    _BuySubscription(users_uuid: json['users_uuid'] as String, packages_uuid: json['packages_uuid'] as String, duration_days: (json['duration_days'] as num).toInt(), payment_method: json['payment_method'] as String);
+
+Map<String, dynamic> _$BuySubscriptionToJson(_BuySubscription instance) => <String, dynamic>{
+  'users_uuid': instance.users_uuid,
+  'packages_uuid': instance.packages_uuid,
+  'duration_days': instance.duration_days,
+  'payment_method': instance.payment_method,
+};

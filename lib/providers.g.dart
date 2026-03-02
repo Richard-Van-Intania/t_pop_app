@@ -127,3 +127,51 @@ final class FetchActivePackagesProvider extends $FunctionalProvider<AsyncValue<U
 }
 
 String _$fetchActivePackagesHash() => r'a39ef79a2d45131084432c8f8fe68ca7e230134e';
+
+@ProviderFor(buyPackage)
+final buyPackageProvider = BuyPackageFamily._();
+
+final class BuyPackageProvider extends $FunctionalProvider<AsyncValue<int>, int, FutureOr<int>> with $FutureModifier<int>, $FutureProvider<int> {
+  BuyPackageProvider._({required BuyPackageFamily super.from, required BuySubscription super.argument}) : super(retry: null, name: r'buyPackageProvider', isAutoDispose: true, dependencies: null, $allTransitiveDependencies: null);
+
+  @override
+  String debugGetCreateSourceHash() => _$buyPackageHash();
+
+  @override
+  String toString() {
+    return r'buyPackageProvider'
+        ''
+        '($argument)';
+  }
+
+  @$internal
+  @override
+  $FutureProviderElement<int> $createElement($ProviderPointer pointer) => $FutureProviderElement(pointer);
+
+  @override
+  FutureOr<int> create(Ref ref) {
+    final argument = this.argument as BuySubscription;
+    return buyPackage(ref, argument);
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return other is BuyPackageProvider && other.argument == argument;
+  }
+
+  @override
+  int get hashCode {
+    return argument.hashCode;
+  }
+}
+
+String _$buyPackageHash() => r'e8b607076b055d30f198adf7ed48b4973a5229e1';
+
+final class BuyPackageFamily extends $Family with $FunctionalFamilyOverride<FutureOr<int>, BuySubscription> {
+  BuyPackageFamily._() : super(retry: null, name: r'buyPackageProvider', dependencies: null, $allTransitiveDependencies: null, isAutoDispose: true);
+
+  BuyPackageProvider call(BuySubscription buySubscription) => BuyPackageProvider._(argument: buySubscription, from: this);
+
+  @override
+  String toString() => r'buyPackageProvider';
+}

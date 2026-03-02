@@ -85,6 +85,19 @@ class PackagesCard extends HookConsumerWidget {
                         FilledButton(
                           onPressed: () {
                             context.pop();
+                            ref.read(fetchLoginProvider.future).then((onValue) {
+                              if (onValue.statusCode == 200 && onValue.model != null) {
+                                ref.read(buyPackageProvider(BuySubscription(users_uuid: onValue.model!.users_uuid, packages_uuid: packages.packages_uuid, duration_days: packages.duration_days, payment_method: 'promptpay')).future).then((
+                                  onValue,
+                                ) {
+                                  if (onValue == 200) {
+                                    final _ = ref.refresh(fetchAllSubscriptionProvider);
+                                    if (!context.mounted) return;
+                                    context.pop();
+                                  }
+                                });
+                              }
+                            });
                           },
                           child: Text('Buy', style: Theme.of(context).textTheme.titleSmall!.copyWith(color: Theme.of(context).colorScheme.onPrimary)),
                         ),

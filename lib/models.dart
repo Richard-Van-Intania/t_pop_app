@@ -63,3 +63,9 @@ abstract class Packages with _$Packages {
   }) = _Packages;
   factory Packages.fromJson(Map<String, Object?> json) => _$PackagesFromJson(json);
 }
+
+@freezed
+abstract class BuySubscription with _$BuySubscription {
+  const factory BuySubscription({required String users_uuid, required String packages_uuid, required int duration_days, required String payment_method}) = _BuySubscription;
+  factory BuySubscription.fromJson(Map<String, Object?> json) => _$BuySubscriptionFromJson(json);
+}

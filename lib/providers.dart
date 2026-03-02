@@ -65,3 +65,10 @@ Future<UnwrapResponse<PackagesList?>> fetchActivePackages(Ref ref) async {
   final PackagesList packagesList = PackagesList.fromJson({'array': jsonDecode(utf8.decode(response.bodyBytes))});
   return UnwrapResponse(statusCode: response.statusCode, model: packagesList);
 }
+
+@riverpod
+Future<int> buyPackage(Ref ref, BuySubscription buySubscription) async {
+  final Uri uri = Uri.https(Constants.authority, 'subscriptions/buy');
+  final response = await http.post(uri, headers: <String, String>{HttpHeaders.contentTypeHeader: ContentType.json.value}, body: jsonEncode(buySubscription.toJson()));
+  return response.statusCode;
+}

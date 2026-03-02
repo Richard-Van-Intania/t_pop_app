@@ -1407,4 +1407,276 @@ as String,
 
 }
 
+
+/// @nodoc
+mixin _$BuySubscription {
+
+ String get users_uuid; String get packages_uuid; int get duration_days; String get payment_method;
+/// Create a copy of BuySubscription
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$BuySubscriptionCopyWith<BuySubscription> get copyWith => _$BuySubscriptionCopyWithImpl<BuySubscription>(this as BuySubscription, _$identity);
+
+  /// Serializes this BuySubscription to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is BuySubscription&&(identical(other.users_uuid, users_uuid) || other.users_uuid == users_uuid)&&(identical(other.packages_uuid, packages_uuid) || other.packages_uuid == packages_uuid)&&(identical(other.duration_days, duration_days) || other.duration_days == duration_days)&&(identical(other.payment_method, payment_method) || other.payment_method == payment_method));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,users_uuid,packages_uuid,duration_days,payment_method);
+
+@override
+String toString() {
+  return 'BuySubscription(users_uuid: $users_uuid, packages_uuid: $packages_uuid, duration_days: $duration_days, payment_method: $payment_method)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $BuySubscriptionCopyWith<$Res>  {
+  factory $BuySubscriptionCopyWith(BuySubscription value, $Res Function(BuySubscription) _then) = _$BuySubscriptionCopyWithImpl;
+@useResult
+$Res call({
+ String users_uuid, String packages_uuid, int duration_days, String payment_method
+});
+
+
+
+
+}
+/// @nodoc
+class _$BuySubscriptionCopyWithImpl<$Res>
+    implements $BuySubscriptionCopyWith<$Res> {
+  _$BuySubscriptionCopyWithImpl(this._self, this._then);
+
+  final BuySubscription _self;
+  final $Res Function(BuySubscription) _then;
+
+/// Create a copy of BuySubscription
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? users_uuid = null,Object? packages_uuid = null,Object? duration_days = null,Object? payment_method = null,}) {
+  return _then(_self.copyWith(
+users_uuid: null == users_uuid ? _self.users_uuid : users_uuid // ignore: cast_nullable_to_non_nullable
+as String,packages_uuid: null == packages_uuid ? _self.packages_uuid : packages_uuid // ignore: cast_nullable_to_non_nullable
+as String,duration_days: null == duration_days ? _self.duration_days : duration_days // ignore: cast_nullable_to_non_nullable
+as int,payment_method: null == payment_method ? _self.payment_method : payment_method // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
+}
+
+}
+
+
+/// Adds pattern-matching-related methods to [BuySubscription].
+extension BuySubscriptionPatterns on BuySubscription {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _BuySubscription value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _BuySubscription() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _BuySubscription value)  $default,){
+final _that = this;
+switch (_that) {
+case _BuySubscription():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _BuySubscription value)?  $default,){
+final _that = this;
+switch (_that) {
+case _BuySubscription() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String users_uuid,  String packages_uuid,  int duration_days,  String payment_method)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _BuySubscription() when $default != null:
+return $default(_that.users_uuid,_that.packages_uuid,_that.duration_days,_that.payment_method);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String users_uuid,  String packages_uuid,  int duration_days,  String payment_method)  $default,) {final _that = this;
+switch (_that) {
+case _BuySubscription():
+return $default(_that.users_uuid,_that.packages_uuid,_that.duration_days,_that.payment_method);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String users_uuid,  String packages_uuid,  int duration_days,  String payment_method)?  $default,) {final _that = this;
+switch (_that) {
+case _BuySubscription() when $default != null:
+return $default(_that.users_uuid,_that.packages_uuid,_that.duration_days,_that.payment_method);case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class _BuySubscription implements BuySubscription {
+  const _BuySubscription({required this.users_uuid, required this.packages_uuid, required this.duration_days, required this.payment_method});
+  factory _BuySubscription.fromJson(Map<String, dynamic> json) => _$BuySubscriptionFromJson(json);
+
+@override final  String users_uuid;
+@override final  String packages_uuid;
+@override final  int duration_days;
+@override final  String payment_method;
+
+/// Create a copy of BuySubscription
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$BuySubscriptionCopyWith<_BuySubscription> get copyWith => __$BuySubscriptionCopyWithImpl<_BuySubscription>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$BuySubscriptionToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _BuySubscription&&(identical(other.users_uuid, users_uuid) || other.users_uuid == users_uuid)&&(identical(other.packages_uuid, packages_uuid) || other.packages_uuid == packages_uuid)&&(identical(other.duration_days, duration_days) || other.duration_days == duration_days)&&(identical(other.payment_method, payment_method) || other.payment_method == payment_method));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,users_uuid,packages_uuid,duration_days,payment_method);
+
+@override
+String toString() {
+  return 'BuySubscription(users_uuid: $users_uuid, packages_uuid: $packages_uuid, duration_days: $duration_days, payment_method: $payment_method)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$BuySubscriptionCopyWith<$Res> implements $BuySubscriptionCopyWith<$Res> {
+  factory _$BuySubscriptionCopyWith(_BuySubscription value, $Res Function(_BuySubscription) _then) = __$BuySubscriptionCopyWithImpl;
+@override @useResult
+$Res call({
+ String users_uuid, String packages_uuid, int duration_days, String payment_method
+});
+
+
+
+
+}
+/// @nodoc
+class __$BuySubscriptionCopyWithImpl<$Res>
+    implements _$BuySubscriptionCopyWith<$Res> {
+  __$BuySubscriptionCopyWithImpl(this._self, this._then);
+
+  final _BuySubscription _self;
+  final $Res Function(_BuySubscription) _then;
+
+/// Create a copy of BuySubscription
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? users_uuid = null,Object? packages_uuid = null,Object? duration_days = null,Object? payment_method = null,}) {
+  return _then(_BuySubscription(
+users_uuid: null == users_uuid ? _self.users_uuid : users_uuid // ignore: cast_nullable_to_non_nullable
+as String,packages_uuid: null == packages_uuid ? _self.packages_uuid : packages_uuid // ignore: cast_nullable_to_non_nullable
+as String,duration_days: null == duration_days ? _self.duration_days : duration_days // ignore: cast_nullable_to_non_nullable
+as int,payment_method: null == payment_method ? _self.payment_method : payment_method // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
+}
+
+
+}
+
 // dart format on
