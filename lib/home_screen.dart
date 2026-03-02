@@ -35,7 +35,27 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
           padding: const EdgeInsets.all(16),
           child: filterCurrentSubscription.when(
             data: (data) => data == null
-                ? Icon(Icons.error_outline, color: Theme.of(context).colorScheme.error, size: 32)
+                ? Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      const SizedBox(height: 32),
+                      Image.asset('images/streamline-freehand--server-error-404-not-found.png', width: 120),
+                      const SizedBox(height: 32),
+                      Text('No active subscription', style: Theme.of(context).textTheme.titleLarge!.copyWith(color: Theme.of(context).colorScheme.onPrimaryContainer)),
+                      const Spacer(),
+                      ElevatedButton(
+                        style: ElevatedButton.styleFrom(backgroundColor: Theme.of(context).colorScheme.primary),
+                        onPressed: () {},
+                        child: Container(
+                          alignment: Alignment.center,
+                          width: double.maxFinite,
+                          height: 56,
+                          child: Text('Shop more subscription', style: Theme.of(context).textTheme.titleMedium!.copyWith(color: Theme.of(context).colorScheme.onPrimary)),
+                        ),
+                      ),
+                      const SizedBox(height: 16),
+                    ],
+                  )
                 : Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [

@@ -13,9 +13,7 @@ class _ErrorScreenState extends ConsumerState<ErrorScreen> {
   Widget build(BuildContext context) {
     return PopScope<void>(
       canPop: false,
-      child: Scaffold(
-        body: Center(child: Icon(Icons.error_outline, color: Theme.of(context).colorScheme.error, size: 32)),
-      ),
+      child: Scaffold(body: Center(child: Image.asset('images/streamline-freehand--server-error-404-not-found.png', width: 160))),
     );
   }
 }
