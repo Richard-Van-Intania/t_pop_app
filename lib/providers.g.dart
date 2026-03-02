@@ -105,3 +105,25 @@ final class FilterCurrentSubscriptionProvider extends $FunctionalProvider<AsyncV
 }
 
 String _$filterCurrentSubscriptionHash() => r'0e798d5a6915cb4eda50c9a1c2c9f2dfdd19e800';
+
+@ProviderFor(fetchActivePackages)
+final fetchActivePackagesProvider = FetchActivePackagesProvider._();
+
+final class FetchActivePackagesProvider extends $FunctionalProvider<AsyncValue<UnwrapResponse<PackagesList?>>, UnwrapResponse<PackagesList?>, FutureOr<UnwrapResponse<PackagesList?>>>
+    with $FutureModifier<UnwrapResponse<PackagesList?>>, $FutureProvider<UnwrapResponse<PackagesList?>> {
+  FetchActivePackagesProvider._() : super(from: null, argument: null, retry: null, name: r'fetchActivePackagesProvider', isAutoDispose: false, dependencies: null, $allTransitiveDependencies: null);
+
+  @override
+  String debugGetCreateSourceHash() => _$fetchActivePackagesHash();
+
+  @$internal
+  @override
+  $FutureProviderElement<UnwrapResponse<PackagesList?>> $createElement($ProviderPointer pointer) => $FutureProviderElement(pointer);
+
+  @override
+  FutureOr<UnwrapResponse<PackagesList?>> create(Ref ref) {
+    return fetchActivePackages(ref);
+  }
+}
+
+String _$fetchActivePackagesHash() => r'a39ef79a2d45131084432c8f8fe68ca7e230134e';

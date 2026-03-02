@@ -41,3 +41,25 @@ abstract class SubscriptionWithPackage with _$SubscriptionWithPackage {
   }) = _SubscriptionWithPackage;
   factory SubscriptionWithPackage.fromJson(Map<String, Object?> json) => _$SubscriptionWithPackageFromJson(json);
 }
+
+@freezed
+abstract class PackagesList with _$PackagesList {
+  const factory PackagesList({required List<Packages> array}) = _PackagesList;
+  factory PackagesList.fromJson(Map<String, Object?> json) => _$PackagesListFromJson(json);
+}
+
+@freezed
+abstract class Packages with _$Packages {
+  const factory Packages({
+    required String packages_uuid,
+    required String title,
+    required String description,
+    required double price,
+    required int duration_days,
+    required String created_at,
+    required String updated_at,
+    required bool is_active,
+    required String benefits,
+  }) = _Packages;
+  factory Packages.fromJson(Map<String, Object?> json) => _$PackagesFromJson(json);
+}

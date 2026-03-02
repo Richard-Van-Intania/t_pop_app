@@ -56,3 +56,12 @@ Future<SubscriptionWithPackage?> filterCurrentSubscription(Ref ref) async {
   array.sort((a, b) => b.subscription_created_at.compareTo(a.subscription_created_at));
   return array.first;
 }
+
+@Riverpod(keepAlive: true)
+Future<UnwrapResponse<PackagesList?>> fetchActivePackages(Ref ref) async {
+  final Uri uri = Uri.https(Constants.authority, 'packages');
+  final response = await http.get(uri);
+  if (response.statusCode != 200) return UnwrapResponse(statusCode: response.statusCode, model: null);
+  final PackagesList packagesList = PackagesList.fromJson({'array': jsonDecode(utf8.decode(response.bodyBytes))});
+  return UnwrapResponse(statusCode: response.statusCode, model: packagesList);
+}

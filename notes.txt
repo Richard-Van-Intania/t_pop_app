@@ -30,8 +30,20 @@ dart format .
 
 
 
+ required String packages_uuid,
+    required String title,
+    required String description,
+    required double price,
+    required int duration_days,
+    required String created_at,
+    required String updated_at,
+    required boolean is_active,
+    required String benefits,
+
+
+
 @freezed
-abstract class SubscriptionWithPackageList with _$SubscriptionWithPackageList {
-  const factory SubscriptionWithPackageList({required String users_uuid, required String email, required String display_name, required String created_at, required String updated_at}) = _SubscriptionWithPackageList;
-  factory SubscriptionWithPackageList.fromJson(Map<String, Object?> json) => _$SubscriptionWithPackageListFromJson(json);
+abstract class PackagesList with _$PackagesList {
+  const factory PackagesList({required List<SubscriptionWithPackage> array}) = _PackagesList;
+  factory PackagesList.fromJson(Map<String, Object?> json) => _$PackagesListFromJson(json);
 }
