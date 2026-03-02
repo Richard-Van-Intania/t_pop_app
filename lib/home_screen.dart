@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:intl/intl.dart';
 import 'l10n/app_localizations.dart';
 import 'providers.dart';
 
@@ -109,7 +110,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                                 children: [
                                   Text('Start date', style: Theme.of(context).textTheme.titleSmall!.copyWith(color: Theme.of(context).colorScheme.onSurfaceVariant)),
                                   const Spacer(),
-                                  Text('Active', style: Theme.of(context).textTheme.titleSmall!.copyWith(color: Theme.of(context).colorScheme.onSurfaceVariant)),
+                                  Text(DateFormat.yMMMMd().format(DateTime.parse(data.subscription_created_at).toLocal()), style: Theme.of(context).textTheme.titleSmall!.copyWith(color: Theme.of(context).colorScheme.onSurfaceVariant)),
                                 ],
                               ),
                               const SizedBox(height: 8),
@@ -119,7 +120,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                                 children: [
                                   Text('End date', style: Theme.of(context).textTheme.titleSmall!.copyWith(color: Theme.of(context).colorScheme.onSurfaceVariant)),
                                   const Spacer(),
-                                  Text('Active', style: Theme.of(context).textTheme.titleSmall!.copyWith(color: Theme.of(context).colorScheme.onSurfaceVariant)),
+                                  Text(DateFormat.yMMMMd().format(DateTime.parse(data.expired_at).toLocal()), style: Theme.of(context).textTheme.titleSmall!.copyWith(color: Theme.of(context).colorScheme.onSurfaceVariant)),
                                 ],
                               ),
                               const SizedBox(height: 8),
@@ -129,7 +130,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                                 children: [
                                   Text('Payment method', style: Theme.of(context).textTheme.titleSmall!.copyWith(color: Theme.of(context).colorScheme.onSurfaceVariant)),
                                   const Spacer(),
-                                  Text('Active', style: Theme.of(context).textTheme.titleSmall!.copyWith(color: Theme.of(context).colorScheme.onSurfaceVariant)),
+                                  Text(data.payment_method, style: Theme.of(context).textTheme.titleSmall!.copyWith(color: Theme.of(context).colorScheme.onSurfaceVariant)),
                                 ],
                               ),
                             ],

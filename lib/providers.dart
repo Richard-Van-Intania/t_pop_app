@@ -53,6 +53,6 @@ Future<SubscriptionWithPackage?> filterCurrentSubscription(Ref ref) async {
   for (final element in fetchAllSubscription.model!.array) {
     if (element.is_active) array.add(element);
   }
-  array.sort((a, b) => a.expired_at.compareTo(b.expired_at));
+  array.sort((a, b) => b.subscription_created_at.compareTo(a.subscription_created_at));
   return array.first;
 }

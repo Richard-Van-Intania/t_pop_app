@@ -104,4 +104,4 @@ final class FilterCurrentSubscriptionProvider extends $FunctionalProvider<AsyncV
   }
 }
 
-String _$filterCurrentSubscriptionHash() => r'e3887b470e85c1ed12994094757b81bac2790652';
+String _$filterCurrentSubscriptionHash() => r'0e798d5a6915cb4eda50c9a1c2c9f2dfdd19e800';
