@@ -171,7 +171,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                       const SizedBox(height: 16),
                     ],
                   ),
-            error: (e, s) => Icon(Icons.error_outline, color: Theme.of(context).colorScheme.error, size: 32),
+            error: (e, s) => Center(child: Image.asset('images/streamline-freehand--server-error-404-not-found.png', width: 160)),
             loading: () => const Center(child: CircularProgressIndicator()),
           ),
         ),
