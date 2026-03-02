@@ -87,11 +87,11 @@ abstract class AppLocalizations {
   /// A list of this localizations delegate's supported locales.
   static const List<Locale> supportedLocales = <Locale>[Locale('en'), Locale('th')];
 
-  /// No description provided for @home.
+  /// No description provided for @current_subscription.
   ///
   /// In en, this message translates to:
-  /// **'Home'**
-  String get home;
+  /// **'Current subscription'**
+  String get current_subscription;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

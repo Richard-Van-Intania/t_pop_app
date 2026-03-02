@@ -9,5 +9,5 @@ class AppLocalizationsTh extends AppLocalizations {
   AppLocalizationsTh([String locale = 'th']) : super(locale);
 
   @override
-  String get home => 'หน้าแรก';
+  String get current_subscription => 'การสมัครสมาชิกปัจจุบัน';
 }

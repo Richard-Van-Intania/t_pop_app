@@ -11,6 +11,11 @@ class PurchasePackageScreen extends StatefulHookConsumerWidget {
 class _PurchasePackageScreenState extends ConsumerState<PurchasePackageScreen> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Theme.of(context).colorScheme.surfaceContainer,
+        title: Text('Purchase package', style: Theme.of(context).textTheme.titleLarge!.copyWith(color: Theme.of(context).colorScheme.onSurfaceVariant)),
+      ),
+    );
   }
 }

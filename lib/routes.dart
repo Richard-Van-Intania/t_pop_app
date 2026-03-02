@@ -3,6 +3,8 @@ import 'package:go_router/go_router.dart';
 import 'error_screen.dart';
 import 'home_screen.dart';
 import 'loading_screen.dart';
+import 'purchase_history_screen.dart';
+import 'purchase_package_screen.dart';
 
 final _rootNavigatorKey = GlobalKey<NavigatorState>();
 
@@ -30,6 +32,10 @@ final RoutingConfig home = RoutingConfig(
         child: const HomeScreen(),
         transitionsBuilder: (context, animation, secondaryAnimation, child) => FadeTransition(opacity: animation, child: child),
       ),
+      routes: <RouteBase>[
+        GoRoute(path: 'purchase_history_screen', builder: (context, state) => const PurchaseHistoryScreen()),
+        GoRoute(path: 'purchase_package_screen', builder: (context, state) => const PurchasePackageScreen()),
+      ],
     ),
   ],
 );

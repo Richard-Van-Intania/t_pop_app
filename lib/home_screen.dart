@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:intl/intl.dart';
 import 'l10n/app_localizations.dart';
@@ -20,12 +21,12 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
       child: Scaffold(
         appBar: AppBar(
           backgroundColor: Theme.of(context).colorScheme.surfaceContainer,
-          title: Text('Current subscription', style: Theme.of(context).textTheme.titleLarge!.copyWith(color: Theme.of(context).colorScheme.onSurfaceVariant)),
+          title: Text(AppLocalizations.of(context)!.current_subscription, style: Theme.of(context).textTheme.titleLarge!.copyWith(color: Theme.of(context).colorScheme.onSurfaceVariant)),
           actions: <Widget>[
             IconButton(
               icon: Icon(Icons.history, color: Theme.of(context).colorScheme.onSurfaceVariant),
               onPressed: () {
-                //
+                context.go('/purchase_history_screen');
               },
             ),
             const SizedBox(width: 16),
@@ -45,7 +46,9 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                       const SizedBox(height: 56),
                       ElevatedButton(
                         style: ElevatedButton.styleFrom(backgroundColor: Theme.of(context).colorScheme.primary),
-                        onPressed: () {},
+                        onPressed: () {
+                          context.go('/purchase_package_screen');
+                        },
                         child: Container(
                           alignment: Alignment.center,
                           width: double.maxFinite,
@@ -160,7 +163,9 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                       const Spacer(),
                       ElevatedButton(
                         style: ElevatedButton.styleFrom(backgroundColor: Theme.of(context).colorScheme.primary),
-                        onPressed: () {},
+                        onPressed: () {
+                          context.go('/purchase_package_screen');
+                        },
                         child: Container(
                           alignment: Alignment.center,
                           width: double.maxFinite,
