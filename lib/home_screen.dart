@@ -24,6 +24,13 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
           title: Text(AppLocalizations.of(context)!.current_subscription, style: Theme.of(context).textTheme.titleLarge!.copyWith(color: Theme.of(context).colorScheme.onSurfaceVariant)),
           actions: <Widget>[
             IconButton(
+              icon: Icon(Icons.language, color: Theme.of(context).colorScheme.onSurfaceVariant),
+              onPressed: () {
+                context.go('/purchase_history_screen');
+              },
+            ),
+            const SizedBox(width: 8),
+            IconButton(
               icon: Icon(Icons.history, color: Theme.of(context).colorScheme.onSurfaceVariant),
               onPressed: () {
                 context.go('/purchase_history_screen');
@@ -42,7 +49,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                       const SizedBox(height: 56),
                       Image.asset('images/streamline-freehand--server-error-404-not-found.png', width: 120),
                       const SizedBox(height: 32),
-                      Text('No active subscription', style: Theme.of(context).textTheme.titleLarge!.copyWith(color: Theme.of(context).colorScheme.onPrimaryContainer)),
+                      Text(AppLocalizations.of(context)!.no_active_subscription, style: Theme.of(context).textTheme.titleLarge!.copyWith(color: Theme.of(context).colorScheme.onPrimaryContainer)),
                       const SizedBox(height: 56),
                       ElevatedButton(
                         style: ElevatedButton.styleFrom(backgroundColor: Theme.of(context).colorScheme.primary),
@@ -53,7 +60,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                           alignment: Alignment.center,
                           width: double.maxFinite,
                           height: 56,
-                          child: Text('Shop more subscription', style: Theme.of(context).textTheme.titleMedium!.copyWith(color: Theme.of(context).colorScheme.onPrimary)),
+                          child: Text(AppLocalizations.of(context)!.shop_more_subscription, style: Theme.of(context).textTheme.titleMedium!.copyWith(color: Theme.of(context).colorScheme.onPrimary)),
                         ),
                       ),
                       const SizedBox(height: 16),
@@ -86,7 +93,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Text('THB ${data.price}', style: Theme.of(context).textTheme.titleLarge!.copyWith(color: Theme.of(context).colorScheme.onPrimaryContainer)),
-                                Text('  /month', style: Theme.of(context).textTheme.titleSmall!.copyWith(color: Theme.of(context).colorScheme.onPrimaryContainer)),
+                                Text('  /${AppLocalizations.of(context)!.month}', style: Theme.of(context).textTheme.titleSmall!.copyWith(color: Theme.of(context).colorScheme.onPrimaryContainer)),
                               ],
                             ),
                             const SizedBox(height: 16),
@@ -121,9 +128,9 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                             children: [
                               Row(
                                 children: [
-                                  Text('Status', style: Theme.of(context).textTheme.titleSmall!.copyWith(color: Theme.of(context).colorScheme.onSurfaceVariant)),
+                                  Text(AppLocalizations.of(context)!.status, style: Theme.of(context).textTheme.titleSmall!.copyWith(color: Theme.of(context).colorScheme.onSurfaceVariant)),
                                   const Spacer(),
-                                  Text('Active', style: Theme.of(context).textTheme.titleSmall!.copyWith(color: Colors.green)),
+                                  Text(AppLocalizations.of(context)!.active, style: Theme.of(context).textTheme.titleSmall!.copyWith(color: Colors.green)),
                                 ],
                               ),
                               const SizedBox(height: 8),
@@ -131,7 +138,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                               const SizedBox(height: 8),
                               Row(
                                 children: [
-                                  Text('Start date', style: Theme.of(context).textTheme.titleSmall!.copyWith(color: Theme.of(context).colorScheme.onSurfaceVariant)),
+                                  Text(AppLocalizations.of(context)!.start_date, style: Theme.of(context).textTheme.titleSmall!.copyWith(color: Theme.of(context).colorScheme.onSurfaceVariant)),
                                   const Spacer(),
                                   Text(DateFormat.yMMMMd().format(DateTime.parse(data.subscription_created_at).toLocal()), style: Theme.of(context).textTheme.titleSmall!.copyWith(color: Theme.of(context).colorScheme.onSurfaceVariant)),
                                 ],
@@ -141,7 +148,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                               const SizedBox(height: 8),
                               Row(
                                 children: [
-                                  Text('End date', style: Theme.of(context).textTheme.titleSmall!.copyWith(color: Theme.of(context).colorScheme.onSurfaceVariant)),
+                                  Text(AppLocalizations.of(context)!.end_date, style: Theme.of(context).textTheme.titleSmall!.copyWith(color: Theme.of(context).colorScheme.onSurfaceVariant)),
                                   const Spacer(),
                                   Text(DateFormat.yMMMMd().format(DateTime.parse(data.expired_at).toLocal()), style: Theme.of(context).textTheme.titleSmall!.copyWith(color: Theme.of(context).colorScheme.onSurfaceVariant)),
                                 ],
@@ -151,7 +158,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                               const SizedBox(height: 8),
                               Row(
                                 children: [
-                                  Text('Payment method', style: Theme.of(context).textTheme.titleSmall!.copyWith(color: Theme.of(context).colorScheme.onSurfaceVariant)),
+                                  Text(AppLocalizations.of(context)!.payment_method, style: Theme.of(context).textTheme.titleSmall!.copyWith(color: Theme.of(context).colorScheme.onSurfaceVariant)),
                                   const Spacer(),
                                   Text(data.payment_method, style: Theme.of(context).textTheme.titleSmall!.copyWith(color: Theme.of(context).colorScheme.onSurfaceVariant)),
                                 ],
@@ -170,7 +177,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                           alignment: Alignment.center,
                           width: double.maxFinite,
                           height: 56,
-                          child: Text('Shop more subscription', style: Theme.of(context).textTheme.titleMedium!.copyWith(color: Theme.of(context).colorScheme.onPrimary)),
+                          child: Text(AppLocalizations.of(context)!.shop_more_subscription, style: Theme.of(context).textTheme.titleMedium!.copyWith(color: Theme.of(context).colorScheme.onPrimary)),
                         ),
                       ),
                       const SizedBox(height: 16),

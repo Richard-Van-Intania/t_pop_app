@@ -92,6 +92,114 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Current subscription'**
   String get current_subscription;
+
+  /// No description provided for @no_active_subscription.
+  ///
+  /// In en, this message translates to:
+  /// **'No active subscription'**
+  String get no_active_subscription;
+
+  /// No description provided for @shop_more_subscription.
+  ///
+  /// In en, this message translates to:
+  /// **'Shop more subscription'**
+  String get shop_more_subscription;
+
+  /// No description provided for @month.
+  ///
+  /// In en, this message translates to:
+  /// **'Month'**
+  String get month;
+
+  /// No description provided for @status.
+  ///
+  /// In en, this message translates to:
+  /// **'Status'**
+  String get status;
+
+  /// No description provided for @active.
+  ///
+  /// In en, this message translates to:
+  /// **'Active'**
+  String get active;
+
+  /// No description provided for @start_date.
+  ///
+  /// In en, this message translates to:
+  /// **'Start date'**
+  String get start_date;
+
+  /// No description provided for @end_date.
+  ///
+  /// In en, this message translates to:
+  /// **'End date'**
+  String get end_date;
+
+  /// No description provided for @payment_method.
+  ///
+  /// In en, this message translates to:
+  /// **'Payment method'**
+  String get payment_method;
+
+  /// No description provided for @your_purchase_history.
+  ///
+  /// In en, this message translates to:
+  /// **'Your purchase history'**
+  String get your_purchase_history;
+
+  /// No description provided for @no_purchase_history.
+  ///
+  /// In en, this message translates to:
+  /// **'No purchase history'**
+  String get no_purchase_history;
+
+  /// No description provided for @expired.
+  ///
+  /// In en, this message translates to:
+  /// **'Expired'**
+  String get expired;
+
+  /// No description provided for @purchase_package.
+  ///
+  /// In en, this message translates to:
+  /// **'Purchase package'**
+  String get purchase_package;
+
+  /// No description provided for @no_package.
+  ///
+  /// In en, this message translates to:
+  /// **'No package'**
+  String get no_package;
+
+  /// No description provided for @are_you_sure.
+  ///
+  /// In en, this message translates to:
+  /// **'Are you sure?'**
+  String get are_you_sure;
+
+  /// No description provided for @package.
+  ///
+  /// In en, this message translates to:
+  /// **'package'**
+  String get package;
+
+  /// No description provided for @cancel.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel'**
+  String get cancel;
+
+  /// No description provided for @buy.
+  ///
+  /// In en, this message translates to:
+  /// **'Buy'**
+  String get buy;
+
+  /// No description provided for @days.
+  ///
+  /// In en, this message translates to:
+  /// **'days'**
+  String get days;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

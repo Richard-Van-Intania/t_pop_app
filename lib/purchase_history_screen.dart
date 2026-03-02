@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:intl/intl.dart';
+import 'l10n/app_localizations.dart';
 import 'models.dart';
 import 'providers.dart';
 
@@ -18,7 +19,7 @@ class _PurchaseHistoryScreenState extends ConsumerState<PurchaseHistoryScreen> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.surfaceContainer,
-        title: Text('Your purchase history', style: Theme.of(context).textTheme.titleLarge!.copyWith(color: Theme.of(context).colorScheme.onSurfaceVariant)),
+        title: Text(AppLocalizations.of(context)!.your_purchase_history, style: Theme.of(context).textTheme.titleLarge!.copyWith(color: Theme.of(context).colorScheme.onSurfaceVariant)),
       ),
       body: fetchAllSubscription.when(
         data: (data) {
@@ -39,7 +40,7 @@ class _PurchaseHistoryScreenState extends ConsumerState<PurchaseHistoryScreen> {
                   const SizedBox(height: 56, width: double.maxFinite),
                   Image.asset('images/streamline-freehand--server-error-404-not-found.png', width: 120),
                   const SizedBox(height: 32),
-                  Text('No purchase history', style: Theme.of(context).textTheme.titleLarge!.copyWith(color: Theme.of(context).colorScheme.onPrimaryContainer)),
+                  Text(AppLocalizations.of(context)!.no_purchase_history, style: Theme.of(context).textTheme.titleLarge!.copyWith(color: Theme.of(context).colorScheme.onPrimaryContainer)),
                 ],
               );
             }
@@ -78,9 +79,9 @@ class HistoryCard extends HookConsumerWidget {
                       child: Text(subscriptionWithPackage.title, style: Theme.of(context).textTheme.headlineMedium!.copyWith(color: Theme.of(context).colorScheme.onTertiaryContainer)),
                     ),
                     if (subscriptionWithPackage.is_active)
-                      Text('Active', style: Theme.of(context).textTheme.titleMedium!.copyWith(color: Colors.green))
+                      Text(AppLocalizations.of(context)!.active, style: Theme.of(context).textTheme.titleMedium!.copyWith(color: Colors.green))
                     else
-                      Text('Expired', style: Theme.of(context).textTheme.titleMedium!.copyWith(color: Colors.red)),
+                      Text(AppLocalizations.of(context)!.expired, style: Theme.of(context).textTheme.titleMedium!.copyWith(color: Colors.red)),
                   ],
                 ),
                 const SizedBox(height: 24),
@@ -120,7 +121,7 @@ class HistoryCard extends HookConsumerWidget {
             children: [
               Row(
                 children: [
-                  Text('Start date', style: Theme.of(context).textTheme.titleSmall!.copyWith(color: Theme.of(context).colorScheme.onSurfaceVariant)),
+                  Text(AppLocalizations.of(context)!.start_date, style: Theme.of(context).textTheme.titleSmall!.copyWith(color: Theme.of(context).colorScheme.onSurfaceVariant)),
                   const Spacer(),
                   Text(DateFormat.yMMMMd().format(DateTime.parse(subscriptionWithPackage.subscription_created_at).toLocal()), style: Theme.of(context).textTheme.titleSmall!.copyWith(color: Theme.of(context).colorScheme.onSurfaceVariant)),
                 ],
@@ -128,7 +129,7 @@ class HistoryCard extends HookConsumerWidget {
               const SizedBox(height: 8),
               Row(
                 children: [
-                  Text('End date', style: Theme.of(context).textTheme.titleSmall!.copyWith(color: Theme.of(context).colorScheme.onSurfaceVariant)),
+                  Text(AppLocalizations.of(context)!.end_date, style: Theme.of(context).textTheme.titleSmall!.copyWith(color: Theme.of(context).colorScheme.onSurfaceVariant)),
                   const Spacer(),
                   Text(DateFormat.yMMMMd().format(DateTime.parse(subscriptionWithPackage.expired_at).toLocal()), style: Theme.of(context).textTheme.titleSmall!.copyWith(color: Theme.of(context).colorScheme.onSurfaceVariant)),
                 ],

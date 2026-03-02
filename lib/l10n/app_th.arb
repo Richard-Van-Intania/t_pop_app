@@ -1,3 +1,21 @@
 {
-  "current_subscription": "การสมัครสมาชิกปัจจุบัน"
+  "current_subscription": "การสมัครสมาชิกปัจจุบัน",
+  "no_active_subscription": "ไม่มีการสมัครสมาชิกที่ใช้งานอยู่",
+  "shop_more_subscription": "เลือกซื้อแพ็กเกจเพิ่มเติม",
+  "month": "เดือน",
+  "status": "สถานะ",
+  "active": "ใช้งานอยู่",
+  "start_date": "วันที่เริ่มต้น",
+  "end_date": "วันที่สิ้นสุด",
+  "payment_method": "วิธีการชำระเงิน",
+  "your_purchase_history": "ประวัติการซื้อของคุณ",
+  "no_purchase_history": "ไม่มีประวัติการซื้อ",
+  "expired": "หมดอายุ",
+  "purchase_package": "ซื้อแพ็กเกจ",
+  "no_package": "ไม่มีแพ็กเกจ",
+  "are_you_sure": "คุณแน่ใจหรือไม่?",
+  "package": "แพ็กเกจ",
+  "cancel": "ยกเลิก",
+  "buy": "ซื้อ",
+  "days": "วัน"
 }

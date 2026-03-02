@@ -1,3 +1,21 @@
 {
-  "current_subscription": "Current subscription"
+  "current_subscription": "Current subscription",
+  "no_active_subscription": "No active subscription",
+  "shop_more_subscription": "Shop more subscription",
+  "month": "Month",
+  "status": "Status",
+  "active": "Active",
+  "start_date": "Start date",
+  "end_date": "End date",
+  "payment_method": "Payment method",
+  "your_purchase_history": "Your purchase history",
+  "no_purchase_history": "No purchase history",
+  "expired": "Expired",
+  "purchase_package": "Purchase package",
+  "no_package": "No package",
+  "are_you_sure": "Are you sure?",
+  "package": "package",
+  "cancel": "Cancel",
+  "buy": "Buy",
+  "days": "days"
 }

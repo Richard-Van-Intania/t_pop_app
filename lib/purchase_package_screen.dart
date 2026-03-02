@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'l10n/app_localizations.dart';
 import 'models.dart';
 import 'providers.dart';
 
@@ -18,7 +19,7 @@ class _PurchasePackageScreenState extends ConsumerState<PurchasePackageScreen> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.surfaceContainer,
-        title: Text('Purchase package', style: Theme.of(context).textTheme.titleLarge!.copyWith(color: Theme.of(context).colorScheme.onSurfaceVariant)),
+        title: Text(AppLocalizations.of(context)!.purchase_package, style: Theme.of(context).textTheme.titleLarge!.copyWith(color: Theme.of(context).colorScheme.onSurfaceVariant)),
       ),
       body: fetchActivePackages.when(
         data: (data) {
@@ -39,7 +40,7 @@ class _PurchasePackageScreenState extends ConsumerState<PurchasePackageScreen> {
                   const SizedBox(height: 56, width: double.maxFinite),
                   Image.asset('images/streamline-freehand--server-error-404-not-found.png', width: 120),
                   const SizedBox(height: 32),
-                  Text('No package', style: Theme.of(context).textTheme.titleLarge!.copyWith(color: Theme.of(context).colorScheme.onPrimaryContainer)),
+                  Text(AppLocalizations.of(context)!.no_package, style: Theme.of(context).textTheme.titleLarge!.copyWith(color: Theme.of(context).colorScheme.onPrimaryContainer)),
                 ],
               );
             }
@@ -75,12 +76,12 @@ class PackagesCard extends HookConsumerWidget {
                   onPressed: () => showDialog<void>(
                     context: context,
                     builder: (BuildContext context) => AlertDialog(
-                      title: const Text('Are you sure?'),
-                      content: Text('${packages.title} package'),
+                      title: Text(AppLocalizations.of(context)!.are_you_sure),
+                      content: Text('${packages.title} ${AppLocalizations.of(context)!.package}'),
                       actions: <Widget>[
                         TextButton(
                           onPressed: () => context.pop(),
-                          child: Text('Cancel', style: Theme.of(context).textTheme.titleSmall!.copyWith(color: Theme.of(context).colorScheme.primary)),
+                          child: Text(AppLocalizations.of(context)!.cancel, style: Theme.of(context).textTheme.titleSmall!.copyWith(color: Theme.of(context).colorScheme.primary)),
                         ),
                         FilledButton(
                           onPressed: () {
@@ -100,19 +101,19 @@ class PackagesCard extends HookConsumerWidget {
                               }
                             });
                           },
-                          child: Text('Buy', style: Theme.of(context).textTheme.titleSmall!.copyWith(color: Theme.of(context).colorScheme.onPrimary)),
+                          child: Text(AppLocalizations.of(context)!.buy, style: Theme.of(context).textTheme.titleSmall!.copyWith(color: Theme.of(context).colorScheme.onPrimary)),
                         ),
                       ],
                     ),
                   ),
-                  child: Text('Buy', style: Theme.of(context).textTheme.titleMedium!.copyWith(color: Theme.of(context).colorScheme.onPrimary)),
+                  child: Text(AppLocalizations.of(context)!.buy, style: Theme.of(context).textTheme.titleMedium!.copyWith(color: Theme.of(context).colorScheme.onPrimary)),
                 ),
               ],
             ),
             const SizedBox(height: 24),
             Align(
               alignment: Alignment.centerRight,
-              child: Text('THB ${packages.price} / ${packages.duration_days} days', style: Theme.of(context).textTheme.titleMedium!.copyWith(color: Theme.of(context).colorScheme.onPrimaryContainer)),
+              child: Text('THB ${packages.price} / ${packages.duration_days} ${AppLocalizations.of(context)!.days}', style: Theme.of(context).textTheme.titleMedium!.copyWith(color: Theme.of(context).colorScheme.onPrimaryContainer)),
             ),
             const SizedBox(height: 8),
             const Divider(thickness: 1),
