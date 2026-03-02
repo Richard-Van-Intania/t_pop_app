@@ -4,6 +4,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:intl/intl.dart';
 import 'l10n/app_localizations.dart';
 import 'providers.dart';
+import 'supported_locale.dart';
 
 class HomeScreen extends StatefulHookConsumerWidget {
   const HomeScreen({super.key});
@@ -23,13 +24,15 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
           backgroundColor: Theme.of(context).colorScheme.surfaceContainer,
           title: Text(AppLocalizations.of(context)!.current_subscription, style: Theme.of(context).textTheme.titleLarge!.copyWith(color: Theme.of(context).colorScheme.onSurfaceVariant)),
           actions: <Widget>[
-            IconButton(
-              icon: Icon(Icons.language, color: Theme.of(context).colorScheme.onSurfaceVariant),
-              onPressed: () {
-                context.go('/purchase_history_screen');
+            DropdownButton<String>(
+              underline: Container(height: 0, color: Colors.transparent),
+              icon: const Icon(Icons.language),
+              onChanged: (String? value) {
+                if (value != null) ref.read(updateLocaleProvider.notifier).update(value);
               },
+              items: supportedLocale.keys.map<DropdownMenuItem<String>>((String value) => DropdownMenuItem<String>(value: value, child: Text(value.toUpperCase()))).toList(),
             ),
-            const SizedBox(width: 8),
+            const SizedBox(width: 16),
             IconButton(
               icon: Icon(Icons.history, color: Theme.of(context).colorScheme.onSurfaceVariant),
               onPressed: () {
