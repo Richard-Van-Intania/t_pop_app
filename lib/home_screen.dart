@@ -38,11 +38,11 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                 ? Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      const SizedBox(height: 32),
+                      const SizedBox(height: 56),
                       Image.asset('images/streamline-freehand--server-error-404-not-found.png', width: 120),
                       const SizedBox(height: 32),
                       Text('No active subscription', style: Theme.of(context).textTheme.titleLarge!.copyWith(color: Theme.of(context).colorScheme.onPrimaryContainer)),
-                      const Spacer(),
+                      const SizedBox(height: 56),
                       ElevatedButton(
                         style: ElevatedButton.styleFrom(backgroundColor: Theme.of(context).colorScheme.primary),
                         onPressed: () {},
