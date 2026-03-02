@@ -47,12 +47,12 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                         child: Column(
                           children: [
                             const SizedBox(height: 32),
-                            Text('Basic', style: Theme.of(context).textTheme.displayMedium!.copyWith(color: Theme.of(context).colorScheme.onPrimaryContainer)),
+                            Text(data.title, style: Theme.of(context).textTheme.displayMedium!.copyWith(color: Theme.of(context).colorScheme.onPrimaryContainer)),
                             const SizedBox(height: 16),
                             const Divider(thickness: 1, indent: 24, endIndent: 24),
                             const SizedBox(height: 16),
                             Text(
-                              'Access to basic content with limited',
+                              data.description,
                               style: Theme.of(context).textTheme.bodyLarge!.copyWith(color: Theme.of(context).colorScheme.onPrimaryContainer),
                               textAlign: TextAlign.center,
                             ),
@@ -61,8 +61,8 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                               crossAxisAlignment: CrossAxisAlignment.center,
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                Text('THB 199', style: Theme.of(context).textTheme.titleLarge!.copyWith(color: Theme.of(context).colorScheme.onPrimaryContainer)),
-                                Text(' / month', style: Theme.of(context).textTheme.titleSmall!.copyWith(color: Theme.of(context).colorScheme.onPrimaryContainer)),
+                                Text('THB ${data.price}', style: Theme.of(context).textTheme.titleLarge!.copyWith(color: Theme.of(context).colorScheme.onPrimaryContainer)),
+                                Text('  /month', style: Theme.of(context).textTheme.titleSmall!.copyWith(color: Theme.of(context).colorScheme.onPrimaryContainer)),
                               ],
                             ),
                             const SizedBox(height: 16),
@@ -82,7 +82,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                             const Icon(Icons.check_circle, color: Colors.green),
                             const SizedBox(width: 8),
                             Expanded(
-                              child: Text('Access basic content, Standard quality streaming', style: Theme.of(context).textTheme.bodyLarge!.copyWith(color: Theme.of(context).colorScheme.onSurfaceVariant)),
+                              child: Text(data.benefits, style: Theme.of(context).textTheme.bodyLarge!.copyWith(color: Theme.of(context).colorScheme.onSurfaceVariant)),
                             ),
                           ],
                         ),
@@ -99,7 +99,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                                 children: [
                                   Text('Status', style: Theme.of(context).textTheme.titleSmall!.copyWith(color: Theme.of(context).colorScheme.onSurfaceVariant)),
                                   const Spacer(),
-                                  Text('Active', style: Theme.of(context).textTheme.titleSmall!.copyWith(color: Theme.of(context).colorScheme.onSurfaceVariant)),
+                                  Text('Active', style: Theme.of(context).textTheme.titleSmall!.copyWith(color: Colors.green)),
                                 ],
                               ),
                               const SizedBox(height: 8),
