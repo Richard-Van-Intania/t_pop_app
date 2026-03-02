@@ -91,7 +91,8 @@ class PackagesCard extends HookConsumerWidget {
                                   onValue,
                                 ) {
                                   if (onValue == 200) {
-                                    final _ = ref.refresh(fetchAllSubscriptionProvider);
+                                    ref.invalidate(filterCurrentSubscriptionProvider);
+                                    ref.invalidate(fetchAllSubscriptionProvider);
                                     if (!context.mounted) return;
                                     context.pop();
                                   }
