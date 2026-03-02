@@ -7,9 +7,10 @@ import 'constants.dart';
 import 'initializers.dart';
 import 'models.dart';
 import 'supported_locale.dart';
+
 part 'providers.g.dart';
 
-@riverpod
+@Riverpod(keepAlive: true)
 class UpdateLocale extends _$UpdateLocale {
   @override
   Locale build() {
@@ -31,4 +32,27 @@ Future<UnwrapResponse<Users?>> fetchLogin(Ref ref) async {
   if (response.statusCode != 200) return UnwrapResponse(statusCode: response.statusCode, model: null);
   final Users users = Users.fromJson(jsonDecode(utf8.decode(response.bodyBytes)));
   return UnwrapResponse(statusCode: response.statusCode, model: users);
+}
+
+@Riverpod(keepAlive: true)
+Future<UnwrapResponse<SubscriptionWithPackageList?>> fetchAllSubscription(Ref ref) async {
+  final fetchLogin = await ref.read(fetchLoginProvider.future);
+  if (fetchLogin.statusCode != 200 || fetchLogin.model == null) return UnwrapResponse(statusCode: fetchLogin.statusCode, model: null);
+  final Uri uri = Uri.https(Constants.authority, 'subscriptions/${fetchLogin.model!.users_uuid}');
+  final response = await http.get(uri);
+  if (response.statusCode != 200) return UnwrapResponse(statusCode: response.statusCode, model: null);
+  final SubscriptionWithPackageList subscriptionWithPackageList = SubscriptionWithPackageList.fromJson({'array': jsonDecode(utf8.decode(response.bodyBytes))});
+  return UnwrapResponse(statusCode: response.statusCode, model: subscriptionWithPackageList);
+}
+
+@Riverpod(keepAlive: true)
+Future<SubscriptionWithPackage?> filterCurrentSubscription(Ref ref) async {
+  final fetchAllSubscription = await ref.read(fetchAllSubscriptionProvider.future);
+  if (fetchAllSubscription.statusCode != 200 || fetchAllSubscription.model == null) return null;
+  final List<SubscriptionWithPackage> array = [];
+  for (final element in fetchAllSubscription.model!.array) {
+    if (element.is_active) array.add(element);
+  }
+  array.sort((a, b) => a.expired_at.compareTo(b.expired_at));
+  return array.first;
 }

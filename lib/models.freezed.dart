@@ -286,4 +286,569 @@ as String,
 
 }
 
+
+/// @nodoc
+mixin _$SubscriptionWithPackageList {
+
+ List<SubscriptionWithPackage> get array;
+/// Create a copy of SubscriptionWithPackageList
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$SubscriptionWithPackageListCopyWith<SubscriptionWithPackageList> get copyWith => _$SubscriptionWithPackageListCopyWithImpl<SubscriptionWithPackageList>(this as SubscriptionWithPackageList, _$identity);
+
+  /// Serializes this SubscriptionWithPackageList to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is SubscriptionWithPackageList&&const DeepCollectionEquality().equals(other.array, array));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(array));
+
+@override
+String toString() {
+  return 'SubscriptionWithPackageList(array: $array)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $SubscriptionWithPackageListCopyWith<$Res>  {
+  factory $SubscriptionWithPackageListCopyWith(SubscriptionWithPackageList value, $Res Function(SubscriptionWithPackageList) _then) = _$SubscriptionWithPackageListCopyWithImpl;
+@useResult
+$Res call({
+ List<SubscriptionWithPackage> array
+});
+
+
+
+
+}
+/// @nodoc
+class _$SubscriptionWithPackageListCopyWithImpl<$Res>
+    implements $SubscriptionWithPackageListCopyWith<$Res> {
+  _$SubscriptionWithPackageListCopyWithImpl(this._self, this._then);
+
+  final SubscriptionWithPackageList _self;
+  final $Res Function(SubscriptionWithPackageList) _then;
+
+/// Create a copy of SubscriptionWithPackageList
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? array = null,}) {
+  return _then(_self.copyWith(
+array: null == array ? _self.array : array // ignore: cast_nullable_to_non_nullable
+as List<SubscriptionWithPackage>,
+  ));
+}
+
+}
+
+
+/// Adds pattern-matching-related methods to [SubscriptionWithPackageList].
+extension SubscriptionWithPackageListPatterns on SubscriptionWithPackageList {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _SubscriptionWithPackageList value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _SubscriptionWithPackageList() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _SubscriptionWithPackageList value)  $default,){
+final _that = this;
+switch (_that) {
+case _SubscriptionWithPackageList():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _SubscriptionWithPackageList value)?  $default,){
+final _that = this;
+switch (_that) {
+case _SubscriptionWithPackageList() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( List<SubscriptionWithPackage> array)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _SubscriptionWithPackageList() when $default != null:
+return $default(_that.array);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( List<SubscriptionWithPackage> array)  $default,) {final _that = this;
+switch (_that) {
+case _SubscriptionWithPackageList():
+return $default(_that.array);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( List<SubscriptionWithPackage> array)?  $default,) {final _that = this;
+switch (_that) {
+case _SubscriptionWithPackageList() when $default != null:
+return $default(_that.array);case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class _SubscriptionWithPackageList implements SubscriptionWithPackageList {
+  const _SubscriptionWithPackageList({required final  List<SubscriptionWithPackage> array}): _array = array;
+  factory _SubscriptionWithPackageList.fromJson(Map<String, dynamic> json) => _$SubscriptionWithPackageListFromJson(json);
+
+ final  List<SubscriptionWithPackage> _array;
+@override List<SubscriptionWithPackage> get array {
+  if (_array is EqualUnmodifiableListView) return _array;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(_array);
+}
+
+
+/// Create a copy of SubscriptionWithPackageList
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$SubscriptionWithPackageListCopyWith<_SubscriptionWithPackageList> get copyWith => __$SubscriptionWithPackageListCopyWithImpl<_SubscriptionWithPackageList>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$SubscriptionWithPackageListToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _SubscriptionWithPackageList&&const DeepCollectionEquality().equals(other._array, _array));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(_array));
+
+@override
+String toString() {
+  return 'SubscriptionWithPackageList(array: $array)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$SubscriptionWithPackageListCopyWith<$Res> implements $SubscriptionWithPackageListCopyWith<$Res> {
+  factory _$SubscriptionWithPackageListCopyWith(_SubscriptionWithPackageList value, $Res Function(_SubscriptionWithPackageList) _then) = __$SubscriptionWithPackageListCopyWithImpl;
+@override @useResult
+$Res call({
+ List<SubscriptionWithPackage> array
+});
+
+
+
+
+}
+/// @nodoc
+class __$SubscriptionWithPackageListCopyWithImpl<$Res>
+    implements _$SubscriptionWithPackageListCopyWith<$Res> {
+  __$SubscriptionWithPackageListCopyWithImpl(this._self, this._then);
+
+  final _SubscriptionWithPackageList _self;
+  final $Res Function(_SubscriptionWithPackageList) _then;
+
+/// Create a copy of SubscriptionWithPackageList
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? array = null,}) {
+  return _then(_SubscriptionWithPackageList(
+array: null == array ? _self._array : array // ignore: cast_nullable_to_non_nullable
+as List<SubscriptionWithPackage>,
+  ));
+}
+
+
+}
+
+
+/// @nodoc
+mixin _$SubscriptionWithPackage {
+
+ String get subscriptions_uuid; String get users_uuid; String get packages_uuid; String get subscription_created_at; String get expired_at; bool get is_active; String get payment_method; String get title; String get description; double get price; int get duration_days; String get benefits;
+/// Create a copy of SubscriptionWithPackage
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$SubscriptionWithPackageCopyWith<SubscriptionWithPackage> get copyWith => _$SubscriptionWithPackageCopyWithImpl<SubscriptionWithPackage>(this as SubscriptionWithPackage, _$identity);
+
+  /// Serializes this SubscriptionWithPackage to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is SubscriptionWithPackage&&(identical(other.subscriptions_uuid, subscriptions_uuid) || other.subscriptions_uuid == subscriptions_uuid)&&(identical(other.users_uuid, users_uuid) || other.users_uuid == users_uuid)&&(identical(other.packages_uuid, packages_uuid) || other.packages_uuid == packages_uuid)&&(identical(other.subscription_created_at, subscription_created_at) || other.subscription_created_at == subscription_created_at)&&(identical(other.expired_at, expired_at) || other.expired_at == expired_at)&&(identical(other.is_active, is_active) || other.is_active == is_active)&&(identical(other.payment_method, payment_method) || other.payment_method == payment_method)&&(identical(other.title, title) || other.title == title)&&(identical(other.description, description) || other.description == description)&&(identical(other.price, price) || other.price == price)&&(identical(other.duration_days, duration_days) || other.duration_days == duration_days)&&(identical(other.benefits, benefits) || other.benefits == benefits));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,subscriptions_uuid,users_uuid,packages_uuid,subscription_created_at,expired_at,is_active,payment_method,title,description,price,duration_days,benefits);
+
+@override
+String toString() {
+  return 'SubscriptionWithPackage(subscriptions_uuid: $subscriptions_uuid, users_uuid: $users_uuid, packages_uuid: $packages_uuid, subscription_created_at: $subscription_created_at, expired_at: $expired_at, is_active: $is_active, payment_method: $payment_method, title: $title, description: $description, price: $price, duration_days: $duration_days, benefits: $benefits)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $SubscriptionWithPackageCopyWith<$Res>  {
+  factory $SubscriptionWithPackageCopyWith(SubscriptionWithPackage value, $Res Function(SubscriptionWithPackage) _then) = _$SubscriptionWithPackageCopyWithImpl;
+@useResult
+$Res call({
+ String subscriptions_uuid, String users_uuid, String packages_uuid, String subscription_created_at, String expired_at, bool is_active, String payment_method, String title, String description, double price, int duration_days, String benefits
+});
+
+
+
+
+}
+/// @nodoc
+class _$SubscriptionWithPackageCopyWithImpl<$Res>
+    implements $SubscriptionWithPackageCopyWith<$Res> {
+  _$SubscriptionWithPackageCopyWithImpl(this._self, this._then);
+
+  final SubscriptionWithPackage _self;
+  final $Res Function(SubscriptionWithPackage) _then;
+
+/// Create a copy of SubscriptionWithPackage
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? subscriptions_uuid = null,Object? users_uuid = null,Object? packages_uuid = null,Object? subscription_created_at = null,Object? expired_at = null,Object? is_active = null,Object? payment_method = null,Object? title = null,Object? description = null,Object? price = null,Object? duration_days = null,Object? benefits = null,}) {
+  return _then(_self.copyWith(
+subscriptions_uuid: null == subscriptions_uuid ? _self.subscriptions_uuid : subscriptions_uuid // ignore: cast_nullable_to_non_nullable
+as String,users_uuid: null == users_uuid ? _self.users_uuid : users_uuid // ignore: cast_nullable_to_non_nullable
+as String,packages_uuid: null == packages_uuid ? _self.packages_uuid : packages_uuid // ignore: cast_nullable_to_non_nullable
+as String,subscription_created_at: null == subscription_created_at ? _self.subscription_created_at : subscription_created_at // ignore: cast_nullable_to_non_nullable
+as String,expired_at: null == expired_at ? _self.expired_at : expired_at // ignore: cast_nullable_to_non_nullable
+as String,is_active: null == is_active ? _self.is_active : is_active // ignore: cast_nullable_to_non_nullable
+as bool,payment_method: null == payment_method ? _self.payment_method : payment_method // ignore: cast_nullable_to_non_nullable
+as String,title: null == title ? _self.title : title // ignore: cast_nullable_to_non_nullable
+as String,description: null == description ? _self.description : description // ignore: cast_nullable_to_non_nullable
+as String,price: null == price ? _self.price : price // ignore: cast_nullable_to_non_nullable
+as double,duration_days: null == duration_days ? _self.duration_days : duration_days // ignore: cast_nullable_to_non_nullable
+as int,benefits: null == benefits ? _self.benefits : benefits // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
+}
+
+}
+
+
+/// Adds pattern-matching-related methods to [SubscriptionWithPackage].
+extension SubscriptionWithPackagePatterns on SubscriptionWithPackage {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _SubscriptionWithPackage value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _SubscriptionWithPackage() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _SubscriptionWithPackage value)  $default,){
+final _that = this;
+switch (_that) {
+case _SubscriptionWithPackage():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _SubscriptionWithPackage value)?  $default,){
+final _that = this;
+switch (_that) {
+case _SubscriptionWithPackage() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String subscriptions_uuid,  String users_uuid,  String packages_uuid,  String subscription_created_at,  String expired_at,  bool is_active,  String payment_method,  String title,  String description,  double price,  int duration_days,  String benefits)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _SubscriptionWithPackage() when $default != null:
+return $default(_that.subscriptions_uuid,_that.users_uuid,_that.packages_uuid,_that.subscription_created_at,_that.expired_at,_that.is_active,_that.payment_method,_that.title,_that.description,_that.price,_that.duration_days,_that.benefits);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String subscriptions_uuid,  String users_uuid,  String packages_uuid,  String subscription_created_at,  String expired_at,  bool is_active,  String payment_method,  String title,  String description,  double price,  int duration_days,  String benefits)  $default,) {final _that = this;
+switch (_that) {
+case _SubscriptionWithPackage():
+return $default(_that.subscriptions_uuid,_that.users_uuid,_that.packages_uuid,_that.subscription_created_at,_that.expired_at,_that.is_active,_that.payment_method,_that.title,_that.description,_that.price,_that.duration_days,_that.benefits);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String subscriptions_uuid,  String users_uuid,  String packages_uuid,  String subscription_created_at,  String expired_at,  bool is_active,  String payment_method,  String title,  String description,  double price,  int duration_days,  String benefits)?  $default,) {final _that = this;
+switch (_that) {
+case _SubscriptionWithPackage() when $default != null:
+return $default(_that.subscriptions_uuid,_that.users_uuid,_that.packages_uuid,_that.subscription_created_at,_that.expired_at,_that.is_active,_that.payment_method,_that.title,_that.description,_that.price,_that.duration_days,_that.benefits);case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class _SubscriptionWithPackage implements SubscriptionWithPackage {
+  const _SubscriptionWithPackage({required this.subscriptions_uuid, required this.users_uuid, required this.packages_uuid, required this.subscription_created_at, required this.expired_at, required this.is_active, required this.payment_method, required this.title, required this.description, required this.price, required this.duration_days, required this.benefits});
+  factory _SubscriptionWithPackage.fromJson(Map<String, dynamic> json) => _$SubscriptionWithPackageFromJson(json);
+
+@override final  String subscriptions_uuid;
+@override final  String users_uuid;
+@override final  String packages_uuid;
+@override final  String subscription_created_at;
+@override final  String expired_at;
+@override final  bool is_active;
+@override final  String payment_method;
+@override final  String title;
+@override final  String description;
+@override final  double price;
+@override final  int duration_days;
+@override final  String benefits;
+
+/// Create a copy of SubscriptionWithPackage
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$SubscriptionWithPackageCopyWith<_SubscriptionWithPackage> get copyWith => __$SubscriptionWithPackageCopyWithImpl<_SubscriptionWithPackage>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$SubscriptionWithPackageToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _SubscriptionWithPackage&&(identical(other.subscriptions_uuid, subscriptions_uuid) || other.subscriptions_uuid == subscriptions_uuid)&&(identical(other.users_uuid, users_uuid) || other.users_uuid == users_uuid)&&(identical(other.packages_uuid, packages_uuid) || other.packages_uuid == packages_uuid)&&(identical(other.subscription_created_at, subscription_created_at) || other.subscription_created_at == subscription_created_at)&&(identical(other.expired_at, expired_at) || other.expired_at == expired_at)&&(identical(other.is_active, is_active) || other.is_active == is_active)&&(identical(other.payment_method, payment_method) || other.payment_method == payment_method)&&(identical(other.title, title) || other.title == title)&&(identical(other.description, description) || other.description == description)&&(identical(other.price, price) || other.price == price)&&(identical(other.duration_days, duration_days) || other.duration_days == duration_days)&&(identical(other.benefits, benefits) || other.benefits == benefits));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,subscriptions_uuid,users_uuid,packages_uuid,subscription_created_at,expired_at,is_active,payment_method,title,description,price,duration_days,benefits);
+
+@override
+String toString() {
+  return 'SubscriptionWithPackage(subscriptions_uuid: $subscriptions_uuid, users_uuid: $users_uuid, packages_uuid: $packages_uuid, subscription_created_at: $subscription_created_at, expired_at: $expired_at, is_active: $is_active, payment_method: $payment_method, title: $title, description: $description, price: $price, duration_days: $duration_days, benefits: $benefits)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$SubscriptionWithPackageCopyWith<$Res> implements $SubscriptionWithPackageCopyWith<$Res> {
+  factory _$SubscriptionWithPackageCopyWith(_SubscriptionWithPackage value, $Res Function(_SubscriptionWithPackage) _then) = __$SubscriptionWithPackageCopyWithImpl;
+@override @useResult
+$Res call({
+ String subscriptions_uuid, String users_uuid, String packages_uuid, String subscription_created_at, String expired_at, bool is_active, String payment_method, String title, String description, double price, int duration_days, String benefits
+});
+
+
+
+
+}
+/// @nodoc
+class __$SubscriptionWithPackageCopyWithImpl<$Res>
+    implements _$SubscriptionWithPackageCopyWith<$Res> {
+  __$SubscriptionWithPackageCopyWithImpl(this._self, this._then);
+
+  final _SubscriptionWithPackage _self;
+  final $Res Function(_SubscriptionWithPackage) _then;
+
+/// Create a copy of SubscriptionWithPackage
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? subscriptions_uuid = null,Object? users_uuid = null,Object? packages_uuid = null,Object? subscription_created_at = null,Object? expired_at = null,Object? is_active = null,Object? payment_method = null,Object? title = null,Object? description = null,Object? price = null,Object? duration_days = null,Object? benefits = null,}) {
+  return _then(_SubscriptionWithPackage(
+subscriptions_uuid: null == subscriptions_uuid ? _self.subscriptions_uuid : subscriptions_uuid // ignore: cast_nullable_to_non_nullable
+as String,users_uuid: null == users_uuid ? _self.users_uuid : users_uuid // ignore: cast_nullable_to_non_nullable
+as String,packages_uuid: null == packages_uuid ? _self.packages_uuid : packages_uuid // ignore: cast_nullable_to_non_nullable
+as String,subscription_created_at: null == subscription_created_at ? _self.subscription_created_at : subscription_created_at // ignore: cast_nullable_to_non_nullable
+as String,expired_at: null == expired_at ? _self.expired_at : expired_at // ignore: cast_nullable_to_non_nullable
+as String,is_active: null == is_active ? _self.is_active : is_active // ignore: cast_nullable_to_non_nullable
+as bool,payment_method: null == payment_method ? _self.payment_method : payment_method // ignore: cast_nullable_to_non_nullable
+as String,title: null == title ? _self.title : title // ignore: cast_nullable_to_non_nullable
+as String,description: null == description ? _self.description : description // ignore: cast_nullable_to_non_nullable
+as String,price: null == price ? _self.price : price // ignore: cast_nullable_to_non_nullable
+as double,duration_days: null == duration_days ? _self.duration_days : duration_days // ignore: cast_nullable_to_non_nullable
+as int,benefits: null == benefits ? _self.benefits : benefits // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
+}
+
+
+}
+
 // dart format on

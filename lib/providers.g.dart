@@ -13,7 +13,7 @@ part of 'providers.dart';
 final updateLocaleProvider = UpdateLocaleProvider._();
 
 final class UpdateLocaleProvider extends $NotifierProvider<UpdateLocale, Locale> {
-  UpdateLocaleProvider._() : super(from: null, argument: null, retry: null, name: r'updateLocaleProvider', isAutoDispose: true, dependencies: null, $allTransitiveDependencies: null);
+  UpdateLocaleProvider._() : super(from: null, argument: null, retry: null, name: r'updateLocaleProvider', isAutoDispose: false, dependencies: null, $allTransitiveDependencies: null);
 
   @override
   String debugGetCreateSourceHash() => _$updateLocaleHash();
@@ -28,7 +28,7 @@ final class UpdateLocaleProvider extends $NotifierProvider<UpdateLocale, Locale>
   }
 }
 
-String _$updateLocaleHash() => r'a7bad4ff2e567705b7992da1f32db9120428b36f';
+String _$updateLocaleHash() => r'73084f85c540f91c0a3d99d1a407891b09301b9a';
 
 abstract class _$UpdateLocale extends $Notifier<Locale> {
   Locale build();
@@ -61,3 +61,47 @@ final class FetchLoginProvider extends $FunctionalProvider<AsyncValue<UnwrapResp
 }
 
 String _$fetchLoginHash() => r'327a2377878ee387bb2a92dc33231822689fdf8b';
+
+@ProviderFor(fetchAllSubscription)
+final fetchAllSubscriptionProvider = FetchAllSubscriptionProvider._();
+
+final class FetchAllSubscriptionProvider extends $FunctionalProvider<AsyncValue<UnwrapResponse<SubscriptionWithPackageList?>>, UnwrapResponse<SubscriptionWithPackageList?>, FutureOr<UnwrapResponse<SubscriptionWithPackageList?>>>
+    with $FutureModifier<UnwrapResponse<SubscriptionWithPackageList?>>, $FutureProvider<UnwrapResponse<SubscriptionWithPackageList?>> {
+  FetchAllSubscriptionProvider._() : super(from: null, argument: null, retry: null, name: r'fetchAllSubscriptionProvider', isAutoDispose: false, dependencies: null, $allTransitiveDependencies: null);
+
+  @override
+  String debugGetCreateSourceHash() => _$fetchAllSubscriptionHash();
+
+  @$internal
+  @override
+  $FutureProviderElement<UnwrapResponse<SubscriptionWithPackageList?>> $createElement($ProviderPointer pointer) => $FutureProviderElement(pointer);
+
+  @override
+  FutureOr<UnwrapResponse<SubscriptionWithPackageList?>> create(Ref ref) {
+    return fetchAllSubscription(ref);
+  }
+}
+
+String _$fetchAllSubscriptionHash() => r'56a215e202f148e7283ec83e8a84509548ea762d';
+
+@ProviderFor(filterCurrentSubscription)
+final filterCurrentSubscriptionProvider = FilterCurrentSubscriptionProvider._();
+
+final class FilterCurrentSubscriptionProvider extends $FunctionalProvider<AsyncValue<SubscriptionWithPackage?>, SubscriptionWithPackage?, FutureOr<SubscriptionWithPackage?>>
+    with $FutureModifier<SubscriptionWithPackage?>, $FutureProvider<SubscriptionWithPackage?> {
+  FilterCurrentSubscriptionProvider._() : super(from: null, argument: null, retry: null, name: r'filterCurrentSubscriptionProvider', isAutoDispose: false, dependencies: null, $allTransitiveDependencies: null);
+
+  @override
+  String debugGetCreateSourceHash() => _$filterCurrentSubscriptionHash();
+
+  @$internal
+  @override
+  $FutureProviderElement<SubscriptionWithPackage?> $createElement($ProviderPointer pointer) => $FutureProviderElement(pointer);
+
+  @override
+  FutureOr<SubscriptionWithPackage?> create(Ref ref) {
+    return filterCurrentSubscription(ref);
+  }
+}
+
+String _$filterCurrentSubscriptionHash() => r'e3887b470e85c1ed12994094757b81bac2790652';

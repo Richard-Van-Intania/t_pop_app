@@ -80,5 +80,8 @@ linter:
     void_checks: true
 
 
+formatter:
+  page_width: 240
+
 plugins:
   riverpod_lint: 3.1.3
